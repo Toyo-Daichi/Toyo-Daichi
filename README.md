@@ -10,14 +10,16 @@
 </a>
 
 ## Language
-
-![Python](https://img.shields.io/badge/-Python-black?logo=Python)
 ![Fortran](https://img.shields.io/badge/-Fortran-black?logo=Fortran)
+![Python](https://img.shields.io/badge/-Python-black?logo=Python)
+<img src="https://img.shields.io/badge/-Bash-black.svg?logo=GNU%20Bash&style=plastic">
 
 ## Tool
-
 ![Git](https://img.shields.io/badge/-Git-black?logo=Git)
 ![GitHub](https://img.shields.io/badge/-GitHub-black?logo=GitHub)
+<img src="https://img.shields.io/badge/-Visual%20Studio%20Code-black.svg?logo=Visual%20studio%20Code&style=plastic">
+<img src="https://img.shields.io/badge/-Vim-black.svg?logo=Vim&style=plastic">
+<img src="https://img.shields.io/badge/-Sublime-black.svg?logo=Sublime%20Text&style=plastic">
 
 <!--
 <a href="https://github.com/anuraghazra/github-readme-stats">
