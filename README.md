@@ -9,7 +9,7 @@
   <img align="left" src="https://github-readme-stats.vercel.app/api?username=Toyo-Daichi&count_private=true&theme=default&show_icons=true&count_private=true" />
 </a>
 
-## Language
+## Preferred Language
 ![Fortran](https://img.shields.io/badge/-Fortran-black?logo=Fortran)
 ![Python](https://img.shields.io/badge/-Python-black?logo=Python)
 <img src="https://img.shields.io/badge/-Bash-black.svg?logo=GNU%20Bash&style=plastic">
