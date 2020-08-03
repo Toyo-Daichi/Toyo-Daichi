@@ -10,7 +10,7 @@
 </a>
 
 ## Preferred Language
-![Fortran](https://img.shields.io/badge/-Fortran-black?logo=Fortran)
+![Fortran90](https://img.shields.io/badge/-Fortran-black?logo=Fortran)
 ![Python](https://img.shields.io/badge/-Python-black?logo=Python)
 <img src="https://img.shields.io/badge/-Bash-black.svg?logo=GNU%20Bash&style=plastic">
 
