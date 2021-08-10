@@ -3,7 +3,8 @@
 -->
 
 ## Hi 👋, I'm Toyo-Daichi.
-- I’m currently learning Meteorology⛅️.
+- I studied Meteorology⛅️ from stastics.  
+I'm currently studying public clouds🌩 (AWS, Azure).
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
   <img align="left" src="https://github-readme-stats.vercel.app/api?username=Toyo-Daichi&count_private=true&theme=default&show_icons=true" />
