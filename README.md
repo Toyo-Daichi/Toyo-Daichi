@@ -9,6 +9,14 @@ I'm currently studying public clouds🌩 (AWS, Azure).
 <a href="https://github.com/anuraghazra/github-readme-stats">
   <img align="left" src="https://github-readme-stats.vercel.app/api?username=Toyo-Daichi&count_private=true&theme=default&show_icons=true" />
 </a>
+  
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toyo-Daichi&theme=default&show_icons=true&count_private=true&layout=compact&hide=jupyter%20notebook)" />
+</a>
+
+## Technology of particular interest Now
+![AWS](https://img.shields.io/badge/-Amazon%20AWS-232F3E.svg?logo=amazon-aws&style=flat)
+
 
 ## Preferred Language
 ![Fortran90](https://img.shields.io/badge/-Fortran90-black?logo=Fortran90)
@@ -24,8 +32,4 @@ I'm currently studying public clouds🌩 (AWS, Azure).
 <img src="https://img.shields.io/badge/-Sublime-black.svg?logo=Sublime%20Text&style=plastic">
 -->
 
-<!--
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toyo-Daichi&theme=default&show_icons=true&count_private=true" />
-</a>
--->
+
