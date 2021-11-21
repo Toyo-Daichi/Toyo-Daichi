@@ -11,8 +11,11 @@
 
 - The technologies I am currently interested in are as follows.  
   
-![AWS](https://img.shields.io/badge/-Amazon%20AWS-232F3E.svg?logo=amazon-aws&style=flat)
-<img src="https://img.shields.io/badge/-Docker-black.svg?logo=docker&style=plastic">
+![AWS](https://img.shields.io/badge/-AWS-black?logo=amazon-aws&style=flat)
+![Docker](https://img.shields.io/badge/-Docker-black?logo=Docker) 
+![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat)
+![React](https://img.shields.io/badge/-React-black?logo=react&style=flat)
+![Nodejs](https://img.shields.io/badge/-npm-black?logo=npm&style=flat)
 
 ## Stats
 <a href="https://github.com/anuraghazra/github-readme-stats">
