@@ -4,7 +4,7 @@
 - I'm good at the following programing languages and Tools. 
   
 ![Bash](https://img.shields.io/badge/-Bash-black.svg?logo=GNU%20Bash&style=plastic")
-![Fortran90](https://img.shields.io/badge/-Fortran90-black?logo=Fortran90)
+![Fortran90](https://img.shields.io/badge/-fortran90-black?logo=fortran)
 ![Python](https://img.shields.io/badge/-Python-black?logo=Python)
 ![Git](https://img.shields.io/badge/-Git-black?logo=Git)
 ![GitHub](https://img.shields.io/badge/-GitHub-black?logo=GitHub)
