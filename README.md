@@ -1,5 +1,5 @@
 ## Hi 👋, I'm Toyo-Daichi.
-- I studied Meteorology⛅️ from stastics. I'm currently studying public clouds🌩 (AWS, Azure).
+- I studied Meteorology⛅️ with stastics. I'm currently studying public clouds🌩 (AWS, Azure).
 
 - I'm good at the following programing languages and Tools. 
   
