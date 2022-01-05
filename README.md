@@ -15,6 +15,7 @@
 ![Azure](https://img.shields.io/badge/-Azure-black?logo=microsoft-azure&style=flat)
 ![Docker](https://img.shields.io/badge/-Docker-black?logo=Docker)
 ![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat)
+![TS](https://img.shields.io/badge/-Typescript-black?logo=typescript&style=flat)
 ![React](https://img.shields.io/badge/-React-black?logo=react&style=flat)
 ![Nodejs](https://img.shields.io/badge/-npm-black?logo=npm&style=flat)
 
