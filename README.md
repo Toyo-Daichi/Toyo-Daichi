@@ -14,6 +14,8 @@
 ![AWS](https://img.shields.io/badge/-AWS-black?logo=amazon-aws&style=flat)
 ![Azure](https://img.shields.io/badge/-Azure-black?logo=microsoft-azure&style=flat)
 ![Docker](https://img.shields.io/badge/-Docker-black?logo=Docker)
+![Kubernetes](https://img.shields.io/badge/-Kubernetes-black?logo=kubernetes&style=flat)
+![GO](https://img.shields.io/badge/-Go-black?logo=go&style=flat)
 ![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat)
 ![TS](https://img.shields.io/badge/-Typescript-black?logo=typescript&style=flat)
 ![React](https://img.shields.io/badge/-React-black?logo=react&style=flat)
