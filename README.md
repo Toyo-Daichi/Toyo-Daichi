@@ -20,6 +20,8 @@
 ![TS](https://img.shields.io/badge/-Typescript-black?logo=typescript&style=flat)
 ![React](https://img.shields.io/badge/-React-black?logo=react&style=flat)
 ![Nodejs](https://img.shields.io/badge/-npm-black?logo=npm&style=flat)
+![PHP](https://img.shields.io/badge/-php-black?logo=php&style=flat)
+![Laravel](https://img.shields.io/badge/-Laravel-black?logo=laravel&style=flat)
 
 ## Stats
 <a href="https://github.com/anuraghazra/github-readme-stats">
