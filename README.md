@@ -17,10 +17,11 @@
 - The technologies I am currently interested in are as follows.  
 
 ![GO](https://img.shields.io/badge/-Go-black?logo=go&style=flat)
+![Terraform](https://img.shields.io/badge/-Terraform-black?logo=terraform&style=flat)
 ![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat)
+![Nodejs](https://img.shields.io/badge/-Nodejs-black?logo=node.js&style=flat)
 ![TS](https://img.shields.io/badge/-Typescript-black?logo=typescript&style=flat)
 ![React](https://img.shields.io/badge/-React-black?logo=react&style=flat)
-![Nodejs](https://img.shields.io/badge/-npm-black?logo=npm&style=flat)
 
 ## Stats
 <a href="https://github.com/anuraghazra/github-readme-stats">
