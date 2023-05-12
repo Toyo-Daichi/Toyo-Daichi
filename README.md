@@ -21,6 +21,7 @@
 ![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat)
 ![Nodejs](https://img.shields.io/badge/-Nodejs-black?logo=node.js&style=flat)
 ![TS](https://img.shields.io/badge/-Typescript-black?logo=typescript&style=flat)
+![NextJS](https://img.shields.io/badge/-Nextjs-black?logo=next.js&style=flat)
 ![React](https://img.shields.io/badge/-React-black?logo=react&style=flat)
 
 ## Stats
