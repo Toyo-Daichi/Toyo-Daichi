@@ -1,5 +1,5 @@
 ## Hi 👋, I'm Toyo-Daichi.
-- I studied Meteorology⛅️ with stastics. I'm currently studying public clouds🌩.  
+- I studied Meteorology⛅️ with statistics. I'm currently studying public clouds🌩.  
 
 ![AWS](https://img.shields.io/badge/-AWS-black?logo=amazon-aws&style=flat) 
 ![Azure](https://img.shields.io/badge/-Azure-black?logo=microsoft-azure&style=flat)
@@ -13,6 +13,9 @@
 ![Docker](https://img.shields.io/badge/-Docker-black?logo=Docker)
 ![Git](https://img.shields.io/badge/-Git-black?logo=Git)
 ![GitHub](https://img.shields.io/badge/-GitHub-black?logo=GitHub)
+
+- My certification knowledge is as listed on the [site](https://www.credly.com/users/daichi-toyooka.b2f2dd52/badges) provided by 
+![Credly](https://img.shields.io/badge/Credly-black?logo=credly&style=flat)   
 
 - The technologies I am currently interested in are as follows.  
 
