@@ -3,23 +3,6 @@
   "blocks": [
     {
       "type": "prompt",
-      "alignment": "right",
-      "overflow": "hide",
-      "segments": [
-        {
-          "type": "executiontime",
-          "style": "powerline",
-          "foreground": "#a9ffb4",
-          "template": " {{ .FormattedMs }}s ",
-          "properties": {
-            "threshold": 0,
-            "style": "dallas"
-          }
-        }
-      ]
-    },
-    {
-      "type": "prompt",
       "alignment": "left",
       "newline": true,
       "overflow": "break",
@@ -27,7 +10,7 @@
         {
           "foreground": "#56B6C2",
           "style": "powerline",
-          "template": "{{.UserName }} on {{ .Icon }} : ",
+          "template": "{{.UserName }} on {{ .Icon }}",
           "type": "os"
         }, 
         {
@@ -36,11 +19,11 @@
           "foreground": "#56B6C2",
           "properties": {
             "style": "agnoster_full",
-            "home_icon": "home",
+            "home_icon": "\udb84\udcb6",
             "folder_icon": "\uf07b",
             "folder_separator_icon": " \u276f "
           },
-          "template": "\ueb06 {{ .Path }} "
+          "template": ": {{ .Path }} "
         },
         {
           "foreground": "#ffffff",
@@ -53,6 +36,23 @@
           "style": "plain",
           "template": "[ {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ]",
           "type": "git"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "overflow": "hide",
+      "segments": [
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "foreground": "#a9ffb4",
+          "template": " {{ .FormattedMs }}s ",
+          "properties": {
+            "threshold": 0,
+            "style": "dallas"
+          }
         }
       ]
     },
