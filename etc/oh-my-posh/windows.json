@@ -1,0 +1,126 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "white":"#ffffff",
+    "cyan": "#8ff6ff",
+    "yellow":"#ffe26e",
+    "green":"#b9ff7c",
+    "blue-grey-0": "#5387aa",
+    "blue-grey-1": "#3d4145",
+    "blue-grey-2":"#40566a",
+    "blue-grey-3":"#203e5c",
+    "blue-grey-4":"#0d2c45",
+    "git-work-stage-changed":"#fff068",
+    "git-ahead-behind":"#ffdba4",
+    "git-ahead":"#c4a1ff",
+    "git-behind":"#ff9ed6"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "p:blue-grey-0",
+          "foreground": "p:white",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "template": "{{.UserName }} on {{ .Icon }} ",
+          "type": "os"
+        }, 
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b4",
+          "background": "p:blue-grey-1",
+          "foreground": "p:cyan",
+          "properties": {
+            "folder_icon": "\uf6d7",
+            "home_icon": "~",
+            "max_depth": 2,
+            "style": "agnoster_short"
+          },
+          "template": " \ue5ff {{ .Path }}"
+        },
+        {
+          "type": "git",
+          "background": "p:blue-grey-3",
+          "foreground": "p:yellow",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+          ],
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "branch_max_length": 25,
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "diamond",
+          "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "trailing_diamond": "\ue0b4"
+        },
+        {
+          "type": "aws",
+          "background": "p:blue-grey-1",
+          "foreground": "white",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{ if and .Profile (ne .Profile \"default\") }}\uf4ac {{ .Profile }}{{ end }}"
+        },        
+        {
+          "type": "exit",
+          "style": "plain",
+          "foreground": "p:green",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#E06C75{{ end }}"
+          ],
+          "template": " {{ .Meaning }}"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "black",
+          "style": "plain",
+          "template": "\u0021",
+          "type": "root"
+        },
+        {
+          "foreground": "black",
+          "style": "plain",
+          "template": "{{ .Name }}",
+          "type": "shell",
+          "properties": {
+            "mapped_shell_names": {
+              "pwsh": "\u276f",
+              "shell": "\u276f",
+              "cmd": ">",
+              "lua": ">",
+              "nu": ":)",
+              "fish": "~>",
+              "zsh": "%",
+              "bash": "$"
+            }
+          }
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "p:cyan",
+    "template": "{{if eq .Shell \"pwsh\"}}\u276f{{else}}{{if eq .Shell \"shell\"}}\u276f{{else}}{{if eq .Shell \"cmd\"}}>{{else}}{{if eq .Shell \"lua\"}}>{{else}}{{if eq .Shell \"nu\"}}:){{else}}{{if eq .Shell \"fish\"}}~>{{else}}{{if eq .Shell \"zsh\"}}%%{{else}}{{if eq .Shell \"bash\"}}${{else}}>{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}{{end}} "
+  },
+  "final_space": true,
+  "version": 2
+}
