@@ -1,0 +1,16 @@
+# .aliases
+
+alias v="nvim"
+alias vi="nvim"
+alias view="nvim -R"
+#
+alias c="cd"
+alias ls="ls -l --color=auto"
+alias la="ls -la --color=auto"
+alias l="ls -CF"
+alias ll="ls -alF"
+alias tree="tree -C"
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+alias pbcopy="xsel --clipboard --input"
