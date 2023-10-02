@@ -1,0 +1,8 @@
+# .zsh_profile
+
+if [ -f .zshrc ]; then
+  source .zshrc
+fi
+
+# NTP set
+sudo ntpdate ntp.nict.jp

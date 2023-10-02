@@ -33,9 +33,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# oh-my-posh
-#eval "$(oh-my-posh --init --shell zsh --config $HOME/.config/themes/omp.json)"
-
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -46,3 +43,4 @@ setopt appendhistory
 if [ -f .aliases ]; then
   source .aliases
 fi
+
