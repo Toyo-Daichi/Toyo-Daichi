@@ -10,6 +10,10 @@
 ![Bash](https://img.shields.io/badge/-Bash-black.svg?logo=GNU%20Bash&style=plastic")
 ![Fortran90](https://img.shields.io/badge/-fortran90-black?logo=fortran)
 ![Python](https://img.shields.io/badge/-Python-black?logo=Python)
+![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat)
+![TS](https://img.shields.io/badge/-Typescript-black?logo=typescript&style=flat)
+![React](https://img.shields.io/badge/-React-black?logo=react&style=flat)
+![Terraform](https://img.shields.io/badge/-Terraform-black?logo=terraform&style=flat)
 ![Docker](https://img.shields.io/badge/-Docker-black?logo=Docker)
 ![Git](https://img.shields.io/badge/-Git-black?logo=Git)
 ![GitHub](https://img.shields.io/badge/-GitHub-black?logo=GitHub)
@@ -20,12 +24,8 @@
 - The technologies I am currently interested in are as follows.  
 
 ![GO](https://img.shields.io/badge/-Go-black?logo=go&style=flat)
-![Terraform](https://img.shields.io/badge/-Terraform-black?logo=terraform&style=flat)
-![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat)
-![Nodejs](https://img.shields.io/badge/-Nodejs-black?logo=node.js&style=flat)
-![TS](https://img.shields.io/badge/-Typescript-black?logo=typescript&style=flat)
+![RUST](https://img.shields.io/badge/-Rust-black?logo=rust&style=flat)
 ![NextJS](https://img.shields.io/badge/-Nextjs-black?logo=next.js&style=flat)
-![React](https://img.shields.io/badge/-React-black?logo=react&style=flat)
 
 ## Stats
 <a href="https://github.com/anuraghazra/github-readme-stats">
