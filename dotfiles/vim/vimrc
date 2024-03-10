@@ -1,0 +1,26 @@
+" vimrc
+
+syntax on
+
+let mapleader = "\<space>"
+set number
+set shell=/bin/bash
+set shiftwidth=2
+set tabstop=2
+set expandtab
+set textwidth=0
+set autoindent
+set hlsearch
+set clipboard+=unnamed
+set mouse=
+
+" split
+nnoremap <leader>- <C-w>s 
+nnoremap <leader>\ <C-w>v 
+" move
+nnoremap <leader>w <C-w>w 
+" resize
+nnoremap <leader>r <C-w><
+nnoremap <leader>l <C-w>>
+nnoremap <leader>u <C-w>+
+nnoremap <leader>b <C-w>-

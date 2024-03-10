@@ -1,4 +1,4 @@
-# .zsh_profile
+# .zprofile
 
 if [ -f .zshrc ]; then
   source .zshrc
