@@ -1,5 +1,6 @@
 require('plugins/nvim-tree')
 require('plugins/harpoon')
+require('plugins/lualine')
 require('plugins/telescope')
 require('plugins/treesitter')
 require('plugins/undotree')
