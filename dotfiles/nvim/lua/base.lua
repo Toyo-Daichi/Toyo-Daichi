@@ -1,4 +1,3 @@
--- vim base config
 vim.g.mapleader  = ' '
 
 vim.o.number = true

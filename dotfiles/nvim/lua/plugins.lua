@@ -1,18 +1,9 @@
-require('plugins/nvim-tree')
-require('plugins/harpoon')
-require('plugins/lualine')
-require('plugins/telescope')
-require('plugins/treesitter')
-require('plugins/undotree')
-require('plugins/nightfox')
-
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Plugin manager
-  use {
-    'wbthomason/packer.nvim'
-  }
+  use 'wbthomason/packer.nvim'
+  
 
   -- IDE
   use {
@@ -65,3 +56,4 @@ return require('packer').startup(function(use)
   }
 
 end)
+
