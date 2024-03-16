@@ -4,10 +4,14 @@ return require('packer').startup(function(use)
   -- Plugin manager
   use 'wbthomason/packer.nvim'
   
-
   -- IDE
   use {
     'neoclide/coc.nvim', branch='release'
+  }
+
+  -- GitHub Copilot
+  use {
+    'github/copilot.vim'
   }
 
   -- Directory Show
