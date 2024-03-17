@@ -43,6 +43,11 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
+  --- Tab bar
+  --use {
+  --  'romgrk/barbar.nvim'
+  --}
+
   -- Syntax config
   use {
     'nvim-treesitter/nvim-treesitter',
