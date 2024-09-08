@@ -5,8 +5,14 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   
   -- IDE
+  --use {
+  --  'neoclide/coc.nvim', branch='release'
+  --}
+
   use {
-    'neoclide/coc.nvim', branch='release'
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
   }
 
   -- GitHub Copilot
@@ -53,6 +59,9 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     { run = ':TSUpdate' }
   }
+
+  --- Diff view
+  use 'sindrets/diffview.nvim'
 
   -- History manager
   use {

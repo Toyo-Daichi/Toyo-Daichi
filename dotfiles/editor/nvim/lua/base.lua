@@ -8,6 +8,9 @@ vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.hlsearch = true
 vim.o.mouse = ''
+vim.o.backup = false
+vim.o.backupcopy = 'yes'
+vim.o.clipboard = 'unnamedplus'
 
 -- pane config
 vim.api.nvim_set_keymap(

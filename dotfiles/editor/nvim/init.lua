@@ -1,6 +1,9 @@
 require("base") 
 require("plugins")
 
+--require("plugins/coc")
+require("plugins/lspconfig")
+--require("plugins/copilot")
 require("plugins/nvim-tree")
 require("plugins/harpoon")
 require("plugins/lualine")
