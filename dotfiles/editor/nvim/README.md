@@ -42,6 +42,22 @@
   - depends on plugin
     - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 
+- [nvimtools/none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
+  - masonでinstallしたlinterやfomatterの設定をしそれらを動かすためのプラグイン
+  - 使い方
+  - depends on plugin
+    - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+    - 非同期通信プラグイン
+
+- [nvimdev/lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim)
+  - 変数の定義元へのjumpや、docのhover、変数・関数のrenameなど、built-in LSPが本来もつ機能をより手軽に使えるようにしてくれるプラグイン
+  - 使い方
+  - depends on plugin
+      - 'nvim-tree/nvim-web-devicons',   
+      - 'nvim-treesitter/nvim-treesitter'
+        - `syntax on`以上のカラースキームを用意
+      
+
 ### ファイル管理
 - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
   - `vi`を起動すると、ツリー上のディレクトリを展開できるプラグイン
@@ -63,7 +79,6 @@
   ```
   - depends on plugin
     - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
-    - 非同期通信プラグイン
 
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
   - 頻出で使うファイルをあらかじめリストアップしておくプラグイン
