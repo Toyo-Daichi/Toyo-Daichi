@@ -44,19 +44,28 @@
 
 - [nvimtools/none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
   - masonでinstallしたlinterやfomatterの設定をしそれらを動かすためのプラグイン
-  - 使い方
   - depends on plugin
     - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
     - 非同期通信プラグイン
 
 - [nvimdev/lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim)
   - 変数の定義元へのjumpや、docのhover、変数・関数のrenameなど、built-in LSPが本来もつ機能をより手軽に使えるようにしてくれるプラグイン
-  - 使い方
   - depends on plugin
       - 'nvim-tree/nvim-web-devicons',   
       - 'nvim-treesitter/nvim-treesitter'
         - `syntax on`以上のカラースキームを用意
-      
+
+- [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+  - LSP単独では補完機能がないので、補完エンジンプラグイン
+  - related plugin
+    - [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+      - 変数や関数の補完
+    - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
+      - bufferに出てくる単語を補完
+    - [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
+      - ファイルやディレクトリのpathを補完
+    - [lspkind](https://github.com/onsails/lspkind.nvim)
+      - 補完画面でのアイコン搭載
 
 ### ファイル管理
 - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
