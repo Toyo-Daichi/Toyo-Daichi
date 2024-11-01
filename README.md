@@ -9,7 +9,7 @@ I'm currently studying public clouds🌩 @ ![AWS](https://img.shields.io/badge/-
 
 - Current Studying [ ![RUST](https://img.shields.io/badge/-Rust-black?logo=rust&style=flat), ![RUST](https://img.shields.io/badge/-Java-black?logo=openjdk&style=flat) ]
 
-- Frameworks/Libraries/IaC [ ![React](https://img.shields.io/badge/-React-black?logo=react&style=flat), ![Terraform](https://img.shields.io/badge/-Terraform-black?logo=terraform&style=flat)) ]
+- Frameworks/Libraries/IaC [ ![React](https://img.shields.io/badge/-React-black?logo=react&style=flat), ![Terraform](https://img.shields.io/badge/-Terraform-black?logo=terraform&style=flat) ]
 
 - Favarite DevTools [ ![Nvim](https://img.shields.io/badge/-Nvim-black?logo=neovim&style=flat) ]
 
