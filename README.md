@@ -1,31 +1,19 @@
 ## Hi 👋, I'm Toyo-Daichi.
-- I studied Meteorology⛅️ with statistics. I'm currently studying public clouds🌩.  
+I studied Meteorology⛅️ with statistics at Data assimilation.  
 
-![AWS](https://img.shields.io/badge/-AWS-black?logo=amazon-aws&style=flat) 
-![Azure](https://img.shields.io/badge/-Azure-black?logo=microsoft-azure&style=flat)
-![GCP](https://img.shields.io/badge/-GCP-black?logo=google-cloud&style=flat)
+I'm currently studying public clouds🌩 @ ![AWS](https://img.shields.io/badge/-AWS-black?logo=amazon-web-services&style=flat) .
 
-- I'm good at the following programing languages and Tools. 
-  
-![Bash](https://img.shields.io/badge/-Bash-black.svg?logo=GNU%20Bash&style=plastic")
-![Fortran90](https://img.shields.io/badge/-fortran90-black?logo=fortran)
-![Python](https://img.shields.io/badge/-Python-black?logo=Python)
-![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat)
-![TS](https://img.shields.io/badge/-Typescript-black?logo=typescript&style=flat)
-![React](https://img.shields.io/badge/-React-black?logo=react&style=flat)
-![Terraform](https://img.shields.io/badge/-Terraform-black?logo=terraform&style=flat)
-![Docker](https://img.shields.io/badge/-Docker-black?logo=Docker)
-![Git](https://img.shields.io/badge/-Git-black?logo=Git)
-![GitHub](https://img.shields.io/badge/-GitHub-black?logo=GitHub)
+### My Skill
 
-- My certification knowledge is as listed on the [site](https://www.credly.com/users/daichi-toyooka.b2f2dd52/badges) provided by 
-![Credly](https://img.shields.io/badge/Credly-black?logo=credly&style=flat)   
+- Main Programing language [ ![Python](https://img.shields.io/badge/-Python-black?logo=Python), ![TS](https://img.shields.io/badge/-Typescript-black?logo=typescript&style=flat), ![GO](https://img.shields.io/badge/-Go-black?logo=Go) ]
 
-- The technologies I am currently interested in are as follows.  
+- Current Studying [ ![RUST](https://img.shields.io/badge/-Rust-black?logo=rust&style=flat), ![RUST](https://img.shields.io/badge/-Java-black?logo=openjdk&style=flat) ]
 
-![GO](https://img.shields.io/badge/-Go-black?logo=go&style=flat)
-![RUST](https://img.shields.io/badge/-Rust-black?logo=rust&style=flat)
-![NextJS](https://img.shields.io/badge/-Nextjs-black?logo=next.js&style=flat)
+- Frameworks/Libraries/IaC [ ![React](https://img.shields.io/badge/-React-black?logo=react&style=flat), ![Terraform](https://img.shields.io/badge/-Terraform-black?logo=terraform&style=flat)) ]
+
+- Favarite DevTools [ ![Nvim](https://img.shields.io/badge/-Nvim-black?logo=neovim&style=flat) ]
+
+- History [ ![Bash](https://img.shields.io/badge/-Bash-black.svg?logo=GNU%20Bash&style=plastic"), ![Fortran90](https://img.shields.io/badge/-fortran90-black?logo=fortran) ->  ![Python](https://img.shields.io/badge/-Python-black?logo=Python) -> ![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat) ]
 
 ## Stats
 <a href="https://github.com/anuraghazra/github-readme-stats">
