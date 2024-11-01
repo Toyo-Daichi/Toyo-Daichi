@@ -11,7 +11,7 @@ I'm currently studying public clouds🌩 @ ![AWS](https://img.shields.io/badge/-
 
 - Frameworks/Libraries/IaC [ ![React](https://img.shields.io/badge/-React-black?logo=react&style=flat), ![Terraform](https://img.shields.io/badge/-Terraform-black?logo=terraform&style=flat) ]
 
-- Favarite DevTools [ ![Nvim](https://img.shields.io/badge/-Nvim-black?logo=neovim&style=flat) ]
+- Favorite DevTools [ ![Nvim](https://img.shields.io/badge/-Nvim-black?logo=neovim&style=flat) ]
 
 - History [ ![Bash](https://img.shields.io/badge/-Bash-black.svg?logo=GNU%20Bash&style=plastic"), ![Fortran90](https://img.shields.io/badge/-fortran90-black?logo=fortran) ->  ![Python](https://img.shields.io/badge/-Python-black?logo=Python) -> ![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat) ]
 
