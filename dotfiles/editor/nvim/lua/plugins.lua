@@ -48,6 +48,14 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'j-hui/fidget.nvim',
+    config = function()
+      require 'plugins.fidget'
+    end,
+    requires = { 'neovim/nvim-lspconfig' }
+  }
+
+  use {
     'mbbill/undotree',
     requires = { 'nvim-lua/plenary.nvim' }
   }
@@ -62,6 +70,10 @@ return require('packer').startup(function(use)
       'MunifTanjim/nui.nvim',
       'rcarriga/nvim-notify',
     }
+  }
+
+  use {
+    'lewis6991/gitsigns.nvim'
   }
 
   -- File
