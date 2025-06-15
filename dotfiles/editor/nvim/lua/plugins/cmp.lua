@@ -10,5 +10,8 @@ return {
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-path' },
     },
+    config = function()
+      require('config.cmp')
+    end,
   }
 }

@@ -23,7 +23,10 @@ require("codecompanion").setup({
   opts = {
     log_level = 'DEBUG',
     language = 'Japanese'
-  }
+  },
+  -- -- init = function()
+  --   require('config.')
+  -- end
 })
 
 vim.keymap.set('n', '<leader>ca', '<cmd>CodeCompanionActions<CR>')

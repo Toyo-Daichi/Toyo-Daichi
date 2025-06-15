@@ -17,4 +17,13 @@ return {
       require('config.lsp')
     end,
   },
+  {
+    "onsails/lspkind.nvim",
+    dependencies = {
+      "hrsh7th/nvim-cmp"
+    },
+    config = function()
+      require('config.lspkind')
+    end
+  },
 }
