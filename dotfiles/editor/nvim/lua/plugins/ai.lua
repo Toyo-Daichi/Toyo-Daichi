@@ -1,15 +1,15 @@
 return {
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require('config.copilot')
-    end,
-  },
+  --{
+  --  "zbirenbaum/copilot.lua",
+  --  cmd = "Copilot",
+  --  event = "InsertEnter",
+  --},
+  --{
+  --  "zbirenbaum/copilot-cmp",
+  --  config = function()
+  --    require('config.copilot')
+  --  end,
+  --},
   {
     "olimorris/codecompanion.nvim",
     dependencies = {

@@ -20,7 +20,12 @@ require('lualine').setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { { 'filename', path = 1 } },
-    lualine_c = {},
+    lualine_c = { {
+      'diagnostics',
+      sources = { 'nvim_diagnostic', 'nvim_lsp' },
+      sections = { 'error', 'warn', 'info', 'hint' },
+      symbols = { error = 'E ', warn = 'W ', info = 'I ', hint = 'H ' }
+    } },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
@@ -34,6 +39,7 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {},
+  inactive_tabline = {},
   winbar = {},
   inactive_winbar = {},
   extensions = {}
