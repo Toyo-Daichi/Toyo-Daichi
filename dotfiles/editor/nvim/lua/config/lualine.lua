@@ -24,7 +24,7 @@ require('lualine').setup {
       'diagnostics',
       sources = { 'nvim_diagnostic', 'nvim_lsp' },
       sections = { 'error', 'warn', 'info', 'hint' },
-      symbols = { error = 'E ', warn = 'W ', info = 'I ', hint = 'H ' }
+      symbols = { error = ' ', warn = ' ', info = ' ', hint = '' },
     } },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
