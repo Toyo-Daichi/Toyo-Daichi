@@ -1,33 +1,19 @@
 require('mason').setup()
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    "lua_ls",
-    "bashls",
-    "cssls",
-    "dockerls",
-    "docker_compose_language_service",
-    "eslint",
-    "gopls",
-    "html",
-    "jsonls",
-    "taplo",
-    "terraformls",
-    "ts_ls",
-    "pyright",
-    "rust_analyzer"
-  }
-})
 
-local handlers = {
-  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-  ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+local ensure_installed = {
+  "lua_ls",
+  "bashls",
+  "ts_ls",
+  "eslint",
+  "gopls",
+  "terraformls",
+  "pyright",
+  "rust_analyzer"
 }
-require('mason-lspconfig').setup_handlers({
-  function(server)
-    require('lspconfig')[server].setup {
-      handlers = handlers
-    }
-  end,
+
+require('mason-lspconfig').setup({
+  automatic_installation = true,
+  ensure_installed = ensure_installed
 })
 
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
@@ -50,3 +36,14 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = true
 })
+
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      },
+    }
+  },
+})
+vim.lsp.enable(ensure_installed)
