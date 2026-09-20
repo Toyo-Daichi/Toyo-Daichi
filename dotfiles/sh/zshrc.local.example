@@ -1,0 +1,22 @@
+# ~/.zshrc.local  (cp zshrc.local.example ~/.zshrc.local して、必要なものだけ有効にする)
+# マシン固有の設定用。zshrc の末尾で読み込まれる。リポジトリの zshrc には入れない。
+
+# Rust
+# [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# Anaconda
+# export PATH="$PATH:$HOME/.anaconda3/bin"
+
+# Terraform
+# export PATH="$HOME/.terraform/version/v1.1.9:$PATH"
+
+# XAMPP
+# export PATH="$PATH:/opt/lampp/bin"
+
+# Android SDK
+# export ANDROID_HOME="$HOME/Library/Android/sdk"
+# export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
+
+# CA 証明書 (brew の ca-certificates を使う場合。brew --prefix は遅いので固定パスで)
+# export SSL_CERT_FILE="/usr/local/etc/ca-certificates/cert.pem"
+# export CURL_CA_BUNDLE="$SSL_CERT_FILE"

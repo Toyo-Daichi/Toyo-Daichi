@@ -1,4 +1,11 @@
 # .bashrc
+# zsh (zshrc + p10k) が主。chsh できない環境で bash を使うとき用の最小構成
+
+# 非対話シェルでは何もしない
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
 
 # basic PATH
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
@@ -7,26 +14,31 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 # custom PATH
 # export PATH = 
 
-# PS1
-if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh -a -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-	export GIT_PS1_SHOWDIRTYSTATE=true
-	source /usr/local/etc/bash_completion.d/git-prompt.sh
-	source /usr/local/etc/bash_completion.d/git-completion.bash
-fi
+# history
+HISTSIZE=10000
+HISTFILESIZE=10000
+HISTCONTROL=ignoredups
+shopt -s histappend
 
-#default:cyan / root:red
-if [ $UID -eq 0 ]; then
-    PS1='\u@\[\033[36m\]\h\[\033[00m\]:\[\033[01m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\\$ '
-elif [ $UID -eq 1000 ]; then
-    PS1='\u@\[\033[36m\]@\[\033[36m\]\h\[\033[00m\]:\[\033[01m\]\w\[\033[31m\]\[\033[00m\]\\$ '
+# PS1 (git ブランチは git-prompt があれば表示)
+for f in /usr/local/etc/bash_completion.d/git-prompt.sh /usr/lib/git-core/git-sh-prompt; do
+  [ -f "$f" ] && source "$f" && break
+done
+if declare -F __git_ps1 >/dev/null; then
+  export GIT_PS1_SHOWDIRTYSTATE=true
+  git_ps1='$(__git_ps1)'
 else
-    PS1='\u\[\033[36m\]@\[\033[36m\]\h\[\033[00m\]:\[\033[01m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\\$ '
+  git_ps1=
 fi
-
-# oh-my-posh
-eval "$(oh-my-posh --init --shell bash --config $HOME/.json)"
+#default:cyan / root:red
+if [ "$UID" -eq 0 ]; then
+  PS1='\u@\[\033[31m\]\h\[\033[00m\]:\[\033[01m\]\w\[\033[31m\]'"$git_ps1"'\[\033[00m\]\$ '
+else
+  PS1='\u@\[\033[36m\]\h\[\033[00m\]:\[\033[01m\]\w\[\033[31m\]'"$git_ps1"'\[\033[00m\]\$ '
+fi
+unset git_ps1 f
 
 # aliases
-if [ -f $HOME/.aliases ]; then
-	source $HOME/.aliases
-fi 
+if [ -f "$HOME/.aliases" ]; then
+  source "$HOME/.aliases"
+fi

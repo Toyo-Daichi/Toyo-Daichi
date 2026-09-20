@@ -1,20 +1,44 @@
 # .zshrc
+# マシン固有の設定 (Android SDK, conda など) は ~/.zshrc.local に書く (zshrc.local.example 参照)
+
+# p10k instant prompt: 出力を伴う処理より前 (ファイルの先頭) に置く
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # basic PATH
+typeset -U path PATH  # PATH の重複を除去
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+# Homebrew (Apple Silicon: /opt/homebrew, Intel Mac: /usr/local, Linux: linuxbrew)
+for _brew_prefix in /opt/homebrew /usr/local /home/linuxbrew/.linuxbrew; do
+  if [[ -x "$_brew_prefix/bin/brew" ]]; then
+    export PATH="$_brew_prefix/bin:$_brew_prefix/sbin:$PATH"
+    break
+  fi
+done
+unset _brew_prefix
 
 # custom PATH
 # export PATH = 
 
-# oh-my-zsh
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+# nvm: nvm.sh の読み込みが遅い (起動が約8秒かかることがある) ので、
+# default の node は PATH に直接通し、nvm 本体は初回実行時に遅延ロードする
+# (~/.nvm/alias/default は lts/* ではなく vX.Y.Z の具体的なバージョンにしておく)
+export NVM_DIR="$HOME/.nvm"
+if [ -r "$NVM_DIR/alias/default" ]; then
+  _nvm_default="$NVM_DIR/versions/node/$(<"$NVM_DIR/alias/default")/bin"
+  [ -d "$_nvm_default" ] && export PATH="$_nvm_default:$PATH"
+  unset _nvm_default
+fi
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  nvm "$@"
+}
 
-autoload -U compinit
-compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
+# options
 setopt print_eight_bit
 setopt no_beep
 setopt hist_ignore_dups
@@ -22,19 +46,37 @@ setopt extended_glob
 setopt share_history
 setopt hist_reduce_blanks
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
+
+# completion (.zcompdump は24時間以内なら再生成・セキュリティチェックを省略)
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# powerlevel10k (oh-my-zsh 経由 / ~/powerlevel10k / brew のいずれか。無ければ何もしない)
+for _p10k in \
+  "$HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme" \
+  "$HOME/powerlevel10k/powerlevel10k.zsh-theme" \
+  "${HOMEBREW_PREFIX:-/usr/local}/share/powerlevel10k/powerlevel10k.zsh-theme"; do
+  if [[ -r "$_p10k" ]]; then
+    source "$_p10k"
+    break
+  fi
+done
+unset _p10k
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # aliases
 if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases
 fi
 
+# local (マシン固有)
+[[ ! -f ~/.zshrc.local ]] || source ~/.zshrc.local
