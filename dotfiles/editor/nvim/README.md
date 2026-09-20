@@ -1,104 +1,154 @@
-# プラグイン一覧
+# nvim
 
-### プラグインマネージャー
-- [Lazy](https://github.com/folke/lazy.nvim)
-  - プラグインマネージャー
-  - 使い方
-  ```bash
-  :Lazy
-  ```
-  
-### 各種プラグイン
+Neovim の設定。プラグインマネージャーは [lazy.nvim](https://github.com/folke/lazy.nvim)。
+動作確認は Neovim 0.12.5 (LSP は `vim.lsp.config` / `vim.lsp.enable` を使うので 0.11 以上が必要)。
+
+## 前提
+
+- Neovim 0.11 以上 (0.12 推奨)
+- `git`、`make`、C コンパイラ (telescope-fzf-native と treesitter のパーサーのビルドに使う)
+- [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/releases) 0.26.1 以上 (treesitter のパーサーのビルドに使う)
+  - `brew install tree-sitter-cli`。ただし bottle が無い環境 (Intel Mac など) では Rust と LLVM をソースビルドして非常に長くなる。
+    その場合は、リリースのバイナリを `~/.local/bin` に置く。
+    ```bash
+    curl -fsSL https://github.com/tree-sitter/tree-sitter/releases/latest/download/tree-sitter-macos-x64.gz | gunzip > ~/.local/bin/tree-sitter
+    chmod +x ~/.local/bin/tree-sitter
+    ```
+    (Apple Silicon は `macos-arm64`、Linux は `linux-x64` など。ファイル名はリリースページで確認する)
+- Nerd Font (アイコンとステータスラインの表示に使う)
+- LSP サーバーは初回起動時に mason が入れる。パッケージによって `npm` や `go` が必要になる
+- AI 補完を使う場合は Gemini の API キー (後述)
+
+## 配置
+
+`install.sh` の対象外なので、手動で symlink を張る。
+
 ```bash
-|-- cmp.lua
-|-- comment.lua
-|-- fidget.lua
-|-- gitsigns.lua
-|-- guard.lua
-|-- icon.lua
-|-- indent-blackline.lua
-|-- lsp.lua
-|-- lualine.lua
-|-- nightfox.lua
-|-- noice.lua
-|-- nvim-tree.lua
-|-- nvim-treesitter.lua
-|-- scrollbar.lua
-|-- telescope.lua
-`-- undotree.lua
+ln -s "$(pwd)" ~/.config/nvim   # このディレクトリで実行
+nvim                            # 初回起動でプラグインが入る
 ```
 
-- [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-  - 補完プラグイン
+`lazy-lock.json` でプラグインのバージョンを固定している。更新は `:Lazy update`。
 
-- [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
-  - コメントアウトを扱うプラグイン
-  - 使い方
-  ```bash
-  :gcc # line
-  :gbc # block
-  ```
-- [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
-  - LSP通信のステータスを分かりやすくしてくれるプラグイン
+## 構成
 
-- [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-  - 各コードのGitStatusを提示してくれるプラグイン
+```
+.
+├── init.lua              # lazy.nvim の bootstrap と読み込み
+├── lazy-lock.json
+└── lua
+    ├── base.lua          # 基本オプションとペイン操作のキーマップ
+    ├── plugins/*.lua     # プラグインの spec (何を入れるか)
+    └── config/*.lua      # プラグインの設定 (どう使うか)
+```
 
-- [nvimdev/guard.nvim](https://github.com/nvimdev/guard.nvim)
-  - formatterとLinterのプラグイン
+`plugins/foo.lua` から `config/foo.lua` を `require` する 1 対 1 の構成。
 
-- [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-  - 各プラグインで使われるアイコン表記のプラグイン
-  - 前提 : NerdFontが入っていること
+## プラグイン
 
-- [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-  - インデントを表現するプラグイン
+| プラグイン | 役割 |
+|---|---|
+| [nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) | カラースキーム (`dayfox`) |
+| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | ステータスライン (Eviline 形式。色は dayfox のパレット) |
+| [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) | ファイルツリー。引数なしで起動すると自動で開く |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | ファイル検索と grep (fzf-native 付き) |
+| [mason.nvim](https://github.com/mason-org/mason.nvim) / [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim) / [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | LSP サーバーの導入と有効化 |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) / [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) / [cmp-buffer](https://github.com/hrsh7th/cmp-buffer) / [cmp-path](https://github.com/hrsh7th/cmp-path) | 補完メニュー (AI、LSP、パス、バッファの候補) |
+| [lspkind.nvim](https://github.com/onsails/lspkind.nvim) | 補完メニューのアイコンと、候補の出どころのラベル (`[AI]` `[LSP]` `[Path]` `[Buf]`) |
+| [minuet-ai.nvim](https://github.com/milanglacier/minuet-ai.nvim) | AI 補完 (Gemini の無料枠) |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | treesitter のパーサーの導入 (ハイライト自体は Neovim 標準) |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | 変更行を左端に表示 |
+| [hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim) | カーソル位置のブロックとインデント線を強調 |
+| [fidget.nvim](https://github.com/j-hui/fidget.nvim) | LSP の進捗表示 |
+| [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Markdown の描画 |
 
-- [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
-  -  LSのインストールを簡単にしてくれるプラグイン
-  - 使い方
-  ```
-  :Mason
-  ```
-  
-- [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
-  - masonでinstallした設定を自動化するプラグイン
-  - 使い方 : 記述しておくと、勝手にinstall/setupが始まる
+有効にしている LSP サーバー: `lua_ls` `bashls` `ts_ls` `eslint` `gopls` `terraformls` `pyright` `rust_analyzer`
 
-- [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-  - VimModeステータスを表示するステータス
+treesitter のパーサー: `bash` `go` `hcl` `javascript` `json` `python` `rust` `terraform` `tsx` `typescript` `yaml`
+(`c` `lua` `vim` `vimdoc` `query` `markdown` `markdown_inline` は Neovim に同梱されている)。
+初回起動時に自動でビルドされる。パーサーが無いファイルタイプは、従来のシンタックスハイライトのまま。
 
-- [EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim)
-  - カラースキームのプラグイン
+## キーマップ
 
-- [folke/noice.nvim](https://github.com/folke/noice.nvim)
-  - VimCommandsや通知をリッチにするプラグイン
+leader は `Space`。
 
-- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
-  - `vi`を起動すると、ツリー上のディレクトリを展開できるプラグイン
-  - 使い方
-  ```bash
-  <Ctrl-e> # Open
-  <Ctrl-q> # Close
-  ```
+### ペイン (`base.lua`)
 
-- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-  - syntaxを言語レベルで判明して表現するプラグイン 
+| キー | 動作 |
+|---|---|
+| `<leader>-` / `<leader>\` | 水平 / 垂直に分割 |
+| `<leader>w` | 次のペインへ移動 |
+| `<leader>r` / `<leader>l` | 幅を狭く / 広く |
+| `<leader>u` / `<leader>b` | 高さを広く / 狭く |
 
-- [petertriho/nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
-  - スクロールバーを提示するプラグイン
+### Undo ツリー (`base.lua`)
 
-- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-  - ファイル一覧や文字列でファイル間を検索できるプラグイン
-  - 使い方
-  ```bash
-  <space> ff # カスタム設定、ファイル検索
-  <space> fg # カスタム設定、ファイル内の文字列検索
-  ```
+| キー | 動作 |
+|---|---|
+| `<leader>/` | Neovim 標準の `nvim.undotree` を開く |
 
-- [mbbill/undotree](https://github.com/mbbill/undotree)
-  - 閉じるまでのファイル変化を追うプラグイン
-  - 使い方
-  ```
-  <space> "/" # カスタム設定、Tree構造の変化が見れる
-  ```
+### ファイルツリー
+
+| キー | 動作 |
+|---|---|
+| `<C-e>` | 開く |
+| `<C-q>` | 閉じる |
+
+### 検索 (telescope)
+
+| キー | 動作 |
+|---|---|
+| `<leader>ff` | ファイル名で検索 |
+| `<leader>fg` | 文字列で検索 (live grep) |
+| `<C-p>` | git 管理下のファイルを検索 |
+| `<leader>ps` | 入力した文字列を grep |
+
+### LSP
+
+| キー | 動作 |
+|---|---|
+| `K` | hover |
+| `gd` / `gD` | 定義 / 宣言へ移動 |
+| `gr` | 参照一覧 |
+| `gI` / `gT` | 実装 / 型定義へ移動 |
+| `gn` | リネーム |
+| `ga` | コードアクション |
+| `gf` | フォーマット (Vim 標準の `gf` を上書きしている) |
+| `ge` | 診断をフロート表示 |
+| `g]` / `g[` | 次 / 前の診断へ移動 |
+
+### 補完 (nvim-cmp)
+
+| キー | 動作 |
+|---|---|
+| `<C-n>` / `<C-p>` | 候補を選ぶ |
+| `<CR>` | 選んだ候補を確定 |
+| `<C-e>` | メニューを閉じる |
+| `<C-Space>` | メニューを手動で開く |
+| `<A-y>` | AI 補完を手動で要求する |
+
+`<A-y>` が効かないときは、ターミナル側で Option を Meta として送る設定にする。
+## AI 補完 (minuet-ai)
+
+入力が止まると、補完メニューに Gemini の候補が並ぶ。LSP の候補も同じメニューに出る。
+
+1. [Google AI Studio](https://aistudio.google.com/) で API キーを取る。
+2. 環境変数 `GEMINI_API_KEY` に入れる。**`~/.zshrc` ではなく `~/.zshrc.local` に書く。**
+   ```bash
+   echo 'export GEMINI_API_KEY="..."' >> ~/.zshrc.local
+   ```
+   `install.sh` を使うと `~/.zshrc` はこのリポジトリの `sh/zshrc` への symlink になる。
+   そこへ追記すると、キーがリポジトリに入ってしまう。
+3. ターミナルを開き直して nvim を起動する。
+
+設定は `lua/config/minuet.lua`。`api_key` にはキーそのものではなく、環境変数の名前を書く。
+モデルは `gemini-3.5-flash` で、無料枠のレート制限に収まるようにリクエストを少なく小さくしている。
+無料枠では、編集中のコードが Google に送られる。機密性の高いコードでは無効にすること。
+
+うまく動かないときは `:Minuet log` を見る。
+
+## 補足
+
+- **`background` の自動判定を止めている** (`base.lua`)。Neovim は端末の背景色から `background` を自動で決める。
+  返事が遅れると dark に切り替わって dayfox が外れ、色が崩れることがあったため。
+- ヘルスチェックの `lazy` に luarocks の警告が出るが、luarocks を使うプラグインは無いので無視してよい。

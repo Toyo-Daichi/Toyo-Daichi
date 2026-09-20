@@ -1,17 +1,14 @@
 return {
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      { 'L3MON4D3/LuaSnip' },
-      { 'zbirenbaum/copilot-cmp' },
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-cmdline' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-path' },
-    },
-    config = function()
-      require('config.cmp')
-    end,
-  }
+  'hrsh7th/nvim-cmp',
+  event = 'InsertEnter',
+  config = function()
+    require('config.cmp')
+  end,
+  dependencies = {
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'onsails/lspkind.nvim',
+    'milanglacier/minuet-ai.nvim',
+  },
 }
