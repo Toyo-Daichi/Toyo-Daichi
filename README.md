@@ -16,10 +16,16 @@ I'm currently studying public clouds🌩 @ ![AWS](https://img.shields.io/badge/-
 - History [ ![Bash](https://img.shields.io/badge/-Bash-black.svg?logo=GNU%20Bash&style=plastic"), ![Fortran90](https://img.shields.io/badge/-fortran90-black?logo=fortran) ->  ![Python](https://img.shields.io/badge/-Python-black?logo=Python) -> ![JS](https://img.shields.io/badge/-Javascript-black?logo=javascript&style=flat) ]
 
 ## Stats
-<a href="https://github.com/anuraghazra/github-readme-stats">
-<img align="left" src="https://github-readme-stats.vercel.app/api?username=Toyo-Daichi&theme=transparent&count_private=true&include_all_commits=false&rank_icon=github&show_icons=true/" height="200">
+<a href="https://github.com/vn7n24fzkq/github-profile-summary-cards">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Toyo-Daichi&theme=github_dark">
+  <img align="left" alt="Toyo-Daichi's GitHub stats" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Toyo-Daichi&theme=github" height="200">
+</picture>
 </a>
-  
-<a href="https://github.com/anuraghazra/github-readme-stats">
-<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Toyo-Daichi&count_private=true&theme=transparent&show_icons=true&count_private=true&hide=jupyter%20notebook"/ height="200">
+
+<a href="https://github.com/vn7n24fzkq/github-profile-summary-cards">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Toyo-Daichi&theme=github_dark">
+  <img align="left" alt="Toyo-Daichi's top languages by commit" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Toyo-Daichi&theme=github" height="200">
+</picture>
 </a>
