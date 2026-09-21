@@ -22,6 +22,8 @@ require('minuet').setup({
   throttle = 1500,
   debounce = 600,
   cmp = {
-    enable_auto_complete = true,
+    -- Request only on <A-y> so idle typing does not burn the quota.
+    -- Turn auto completion on/off at runtime with `:Minuet cmp toggle`.
+    enable_auto_complete = false,
   },
 })
