@@ -7,6 +7,7 @@ local ensure_installed = {
   "eslint",
   "gopls",
   "terraformls",
+  "jdtls",
   "pyright",
   "rust_analyzer"
 }

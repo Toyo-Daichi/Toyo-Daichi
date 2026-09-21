@@ -64,7 +64,7 @@ nvim                            # 初回起動でプラグインが入る
 | [fidget.nvim](https://github.com/j-hui/fidget.nvim) | LSP の進捗表示 |
 | [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Markdown の描画 |
 
-有効にしている LSP サーバー: `lua_ls` `bashls` `ts_ls` `eslint` `gopls` `terraformls` `pyright` `rust_analyzer`
+有効にしている LSP サーバー: `lua_ls` `bashls` `ts_ls` `eslint` `gopls` `terraformls` `jdtls` `pyright` `rust_analyzer`
 
 treesitter のパーサー: `bash` `go` `hcl` `javascript` `json` `python` `rust` `terraform` `tsx` `typescript` `yaml`
 (`c` `lua` `vim` `vimdoc` `query` `markdown` `markdown_inline` は Neovim に同梱されている)。
